@@ -1,0 +1,51 @@
+Top level
+
+Artist
+	Search:
+		arid artist artistaccent alias begin comment country end ended gender ipi sortname tag type
+	Lookup:
+		aliases recordings releases release-groups works tags ratings artist-credits discids media puids isrcs artist-rels label-rels recording-rels release-rels release-group-rels url-rels work-rels
+
+mami id: eb440023-8eb3-4c92-836d-91e4772bae41
+
+Browse URL:
+http://musicbrainz.org/ws/2/artist/eb440023-8eb3-4c92-836d-91e4772bae41?inc=aliases+recordings+releases+release-groups+works+tags+ratings+artist-credits+discids+media+puids+isrcs+artist-rels+label-rels+recording-rels+release-rels+release-group-rels+url-rels+work-rels
+
+Recordings:
+
+artists+releases+discids+media+puids+isrcs+artist-credits+aliases+tags+ratings+user-tags+user-ratings+artist-rels+label-rels+recording-rels+release-rels+release-group-rels+url-rels+work-rels+work-level-rels
+
+Releases:
+
+http://musicbrainz.org/ws/2/release/0879ca2b-a394-43dc-ac4b-fa27465dc0b9?inc=artists+labels+recordings+release-groups+discids+media+puids+isrcs+artist-credits+aliases+tags+ratings+user-tags+user-ratings+artist-rels+label-rels+recording-rels+release-rels+release-group-rels+url-rels+work-rels+recording-level-rels+work-level-rels
+
+arid artist artistname asin barcode catno comment country creditname date discids discidsmedium format laid label lang mediums primarytype puid reid release releaseaccent rgid script secondarytype status tracks tracksmedium type 
+
+
+artists+labels+recordings+release-groups
+
+
+Release Group:
+http://musicbrainz.org/ws/2/release-group/bdaeec2d-94f1-46b5-91f3-340ec6939c66?inc=artist-credits+releases+discids+media+artist-credits+aliases+tags+ratings+user-tags+user-ratings+artist-rels+label-rels+recording-rels+release-rels+release-group-rels+url-rels+work-rels
+
+http://www.musicbrainz.org/ws/2/release-group?artist=38d16213-25ba-450d-8665-4e08548e62e3&inc=artist-credits+artist-credits+tags+ratings+user-tags+user-ratings+artist-rels+label-rels+recording-rels+release-rels+release-group-rels+url-rels+work-rels
+
+Label:
+http://musicbrainz.org/ws/2/label/cf7fc5cf-e011-4ef4-b511-cd0188537910?inc=releases+discids+media+artist-credits+aliases+tags+ratings+user-tags+user-ratings+artist-rels+label-rels+recording-rels+release-rels+release-group-rels+url-rels+work-rels
+
+works:
+http://musicbrainz.org/ws/2/work/04d18906-f086-3be7-985e-ff74a19d5ae7?inc=aliases+tags+ratings+user-tags+user-ratings+artist-rels+label-rels+recording-rels+release-rels+release-group-rels+url-rels+work-rels
+
+http://www.musicbrainz.org/ws/2/work?artist=38d16213-25ba-450d-8665-4e08548e62e3&inc=aliases+tags+ratings+user-tags+user-ratings+artist-rels+label-rels+recording-rels+release-rels+release-group-rels+url-rels+work-rels
+
+Misc:
+discids+media+puids+isrcs+artist-credits+various-artists
+aliases+tags+ratings+user-tags+user-ratings
+artist-rels+label-rels+recording-rels+release-rels+release-group-rels+url-rels+work-rels
+recording-level-rels+work-level-rels
+
+Browse:
+
+
+
+http://musicbrainz.org/ws/2/release/0879ca2b-a394-43dc-ac4b-fa27465dc0b9?inc=release-groups+artist-rels+label-rels+release-rels+url-rels+labels+isrcs+recordings

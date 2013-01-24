@@ -1,0 +1,11 @@
+User related routeens:
+	User Login (logic there, need to implement)
+	User Tags (Agian logic there, need to implement)
+	User POSTing
+
+Artist Credits is most likly broken as well as illogical.
+_create_label_info needs an example of multiple labels embeded.
+Clean up inc logic
+Add better error handling
+	remove die
+	parse url to ensure they are valid for the type of request
