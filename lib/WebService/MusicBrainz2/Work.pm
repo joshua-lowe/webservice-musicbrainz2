@@ -52,7 +52,7 @@ sub _init {
    my $q = WebService::MusicBrainz2::Query->new(@_);
 
    $q->set_search_params(
-	   qw/alias arid artist comment iswc lang tag type wid work workaccent query/
+	   qw/alias arid artist comment iswc lang tag type wid work workaccent query basic/
    );
 
    $q->set_browse_params(qw/artist/);

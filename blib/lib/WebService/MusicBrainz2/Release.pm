@@ -53,7 +53,7 @@ sub _init {
 		qw/query arid artist artistname asin barcode catno comment country
 		creditname date discids discidsmedium format laid label lang mediums
 		primarytype puid reid release releaseaccent rgid script secondarytype
-		status tracks tracksmedium type query/
+		status tracks tracksmedium type query basic/
 	);
 
 	$q->set_browse_params(
@@ -62,16 +62,16 @@ sub _init {
 
 	$q->set_inc_params(
 		qw/artists labels recordings release-groups discids media puids isrcs
-		artist-credits aliases tags ratings
-		user-tags user-ratings
+		artist-credits aliases echoprints
+		tags ratings user-tags user-ratings
 		artist-rels label-rels recording-rels release-rels release-group-rels
-		url-rels work-rels recording-level-rels work-level-rels/
+		url-rels work-rels recording-level-rels work-level-rels annotation/
 	);
 
 	$q->set_browse_inc_params(
-		qw/labels recordings release-groups discids media puids isrcs artist-credits
-		artist-rels label-rels recording-rels release-rels release-group-rels url-rels
-		work-rels/
+		qw/artist-credits labels recordings release-groups media discids
+		artist-rels label-rels recording-rels release-rels release-group-rels
+		url-rels work-rels/
 	);
 
 	$self->{_query} = $q;

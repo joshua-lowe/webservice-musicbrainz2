@@ -54,8 +54,8 @@ sub _init {
 	my $q = WebService::MusicBrainz2::Query->new(@_);
 
 	$q->set_search_params(
-		qw/alias begin code comment country end ended ipi label labelaccent sortname
-		type tag query/
+		qw/alias begin code comment country end ended ipi label labelaccent
+		sortname type tag query basic/
 	);
 
 	$q->set_browse_params(

@@ -23,12 +23,14 @@ All the methods listed below are accessor methods.  They can take a scalar argum
 
 =head2 length
 
+=head2 title
+
 =head2 recording
 
 =cut
 
 __PACKAGE__->mk_accessors(
-	qw/position number length recording/);
+	qw/position number length title recording/);
 
 =head1 AUTHOR
 

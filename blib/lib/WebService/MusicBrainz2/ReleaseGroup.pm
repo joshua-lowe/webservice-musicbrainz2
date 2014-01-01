@@ -52,7 +52,7 @@ sub _init {
 	$q->set_search_params(
 		qw/arid artist artistname comment creditname primarytype rgid releasegroup
 		releasegroupaccent releases release reid secondarytype status tag type
-		query/
+		query basic/
 	);
 
 	$q->set_browse_params(

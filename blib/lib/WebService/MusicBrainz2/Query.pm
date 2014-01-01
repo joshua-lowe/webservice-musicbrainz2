@@ -150,6 +150,7 @@ sub _get {
 
 	$ua->agent("WebService::MusicBrainz2/$VERSION");
 
+	print "$url\n";
 	my $response = $ua->get($url);
 
 	if($response->code eq "200") {
@@ -228,7 +229,11 @@ sub _validate_search_params {
 	for my $key (keys %$params){
 		if(lc($key) ~~ @{$self->{_valid_search_params}}){
 			my $sanitized = URI::Escape::uri_escape_utf8($$params{$key});
-			push @terms, "$key:$sanitized";
+			if($key eq 'basic'){
+				unshift @terms, "$sanitized";
+			} else {
+				push @terms, "$key:$sanitized";
+			}
 		} else {
 			push @$failed, $key;
 		}

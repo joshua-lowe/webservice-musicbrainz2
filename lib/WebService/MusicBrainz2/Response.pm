@@ -548,7 +548,11 @@ sub _create_recording {
 	$recording->user_tag_list($self->_create_tag_list($xUserTagList)) if $xUserTagList;
 	$recording->user_rating($self->_create_rating($xUserRating)) if $xUserRating;
 
-	#$recording->relation_lisd
+	my $relationLists = $self->_create_relation_lists(\@xRelationList);
+	$recording->relation_list($relationLists->[0]) if $relationLists;
+	$recording->relation_lists($relationLists) if $relationLists;
+
+	return $recording;
 }
 
 sub _create_work_list {
@@ -599,23 +603,36 @@ sub _create_artist_credit {
 
 	my $xpc = $self->xpc;
 
+	my @xNameCredits = $xpc->findnodes('mmd:name-credit', $xCredits);
+
 	my $credits = [];
-	my $joins = [];
-
-	for my $xName ($xpc->findnodes('mmd:name-credit', $xCredits)) {
-		my ($xArtist) = $xpc->findnodes('mmd:artist[1]', $xName);
-		my $artist = $self->_create_artist($xArtist);
-		push @$credits, $artist;
-		push @$joins, $xName->getAttribute('joinphrase') if $xName->getAttribute('joinphrase');
-	}
-
 	require WebService::MusicBrainz2::Response::ArtistCredit;
 	my $artist_credit = WebService::MusicBrainz2::Response::ArtistCredit->new;
 
-	$artist_credit->join_phrases($joins);
-	$artist_credit->credits($credits);
+	for my $xName (@xNameCredits) {
+		push @$credits, $self->_create_name_credit($xName);
+	}
+
+	$artist_credit->name_credits($credits);
 
 	return $artist_credit;
+}
+
+sub _create_name_credit {
+	my $self = shift;
+	my ($xNameCredit) = @_;
+
+	my $xpc = $self->xpc;
+
+	my ($xArtist) = $xpc->findnodes('mmd:artist[1]', $xNameCredit);
+
+	require WebService::MusicBrainz2::Response::NameCredit;
+	my $name = WebService::MusicBrainz2::Response::NameCredit->new;
+
+	$name->artist($self->_create_artist($xArtist)) if($xArtist);
+	$name->joinphrase($xNameCredit->getAttribute('joinphrase')) if $xNameCredit->getAttribute('joinphrase');
+
+	return $name;
 }
 
 sub _create_release {
@@ -640,6 +657,7 @@ sub _create_release {
 	my ($xArtistCredit) = $xpc->findnodes('mmd:artist-credit[1]', $xRelease);
 	my ($xReleaseGroup) = $xpc->findnodes('mmd:release-group[1]', $xRelease);
 
+	my ($xCoverArtArchive) = $xpc->findnodes('mmd:cover-art-archive[1]', $xRelease);
 	my ($xLabelInfoList) = $xpc->findnodes('mmd:label-info-list[1]', $xRelease);
 	my ($xMediumList) = $xpc->findnodes('mmd:medium-list[1]', $xRelease);
 
@@ -670,6 +688,7 @@ sub _create_release {
 	$release->artist_credit($self->_create_artist_credit($xArtistCredit)) if $xArtistCredit;
 	$release->release_group($self->_create_release_group($xReleaseGroup)) if $xReleaseGroup;
 
+	$release->cover_art_archive($self->_create_cover_art_archive($xCoverArtArchive)) if $xCoverArtArchive;
 	$release->label_info_list($self->_create_label_info_list($xLabelInfoList)) if $xLabelInfoList;
 	$release->medium_list($self->_create_medium_list($xMediumList)) if $xMediumList;
 
@@ -703,6 +722,28 @@ sub _create_text_rep {
 	$text_rep->script($xScript->textContent) if $xScript;
 
 	return $text_rep;
+}
+
+sub _create_cover_art_archive {
+	my $self = shift;
+	my ($xCoverArtArchive) = @_;
+
+	my $xpc = $self->xpc;
+
+	my ($xArtwork) = $xpc->findnodes('mmd:artwork[1]', $xCoverArtArchive);
+	my ($xCount) = $xpc->findnodes('mmd:count[1]', $xCoverArtArchive);
+	my ($xFront) = $xpc->findnodes('mmd:front[1]', $xCoverArtArchive);
+	my ($xBack) = $xpc->findnodes('mmd:back[1]', $xCoverArtArchive);
+
+	require WebService::MusicBrainz2::Response::CoverArtArchive;
+	my $cover_art_archive = WebService::MusicBrainz2::Response::CoverArtArchive->new;
+
+	$cover_art_archive->artwork($xArtwork->textContent) if ($xArtwork);
+	$cover_art_archive->count($xCount->textContent) if ($xCount);
+	$cover_art_archive->front($xFront->textContent) if ($xFront);
+	$cover_art_archive->back($xBack->textContent) if ($xBack);
+
+	return $cover_art_archive;
 }
 
 sub _create_label {
@@ -899,6 +940,7 @@ sub _create_track {
 	my ($xPosition) = $xpc->findnodes('mmd:position[1]', $xTrack);
 	my ($xNumber) = $xpc->findnodes('mmd:number[1]', $xTrack);
 	my ($xLength) = $xpc->findnodes('mmd:length[1]', $xTrack);
+	my ($xTitle) = $xpc->findnodes('mmd:title[1]', $xTrack);
 	my ($xRecording) = $xpc->findnodes('mmd:recording[1]', $xTrack);
 
 	require WebService::MusicBrainz2::Response::Track;
@@ -907,6 +949,7 @@ sub _create_track {
 	$track->position($xPosition->textContent) if $xPosition;
 	$track->number($xNumber->textContent) if $xNumber;
 	$track->length($xLength->textContent) if $xLength;
+	$track->title($xTitle->textContent) if $xTitle;
 	$track->recording($self->_create_recording($xRecording)) if $xRecording;
 
 	return $track;
@@ -955,6 +998,45 @@ sub _create_alias_list {
    return $alias_list;
 }
 
+sub _create_attribute_list {
+	my $self = shift;
+	my ($xAttributeList) = @_;
+
+	my $xpc = $self->xpc;
+
+	require WebService::MusicBrainz2::Response::AttributeList;
+	my $attribute_list = WebService::MusicBrainz2::Response::AttributeList->new;
+
+	$attribute_list->count($xAttributeList->getAttribute('count')) if $xAttributeList->getAttribute('count');
+	$attribute_list->offset($xAttributeList->getAttribute('offset')) if $xAttributeList->getAttribute('offset');
+
+	my $attributes = [];
+
+	for my $xAttribute ($xpc->findnodes('mmd:attribute', $xAttributeList)){
+		my $attribute = $self->_create_attribute($xAttribute);
+		push @$attributes, $attribute if($attribute);
+	}
+
+	$attribute_list->attributes($attributes);
+
+	return $attribute_list
+
+}
+
+sub _create_attribute {
+	my $self = shift;
+	my $xAttribute = shift;
+
+	my $xpc = $self->xpc;
+
+	require WebService::MusicBrainz2::Response::Attribute;
+	my $attribute = WebService::MusicBrainz2::Response::Attribute->new;
+
+	$attribute->text($xAttribute->textContent) if $xAttribute;
+
+	return $attribute;
+}
+
 sub _create_relation {
 	my $self = shift;
 	my ($xRelation) = @_;
@@ -968,7 +1050,7 @@ sub _create_relation {
 	my ($xWork) = $xpc->findnodes('mmd:work[1]', $xRelation);
 	my ($xLabel) = $xpc->findnodes('mmd:label[1]', $xRelation);
 
-	my @xAttributeList = $xpc->findnodes('mmd:attribute-list', $xRelation);
+	my ($xAttributeList) = $xpc->findnodes('mmd:attribute-list[1]', $xRelation);
 
 	my ($xTarget) = $xpc->findnodes('mmd:target[1]', $xRelation);
 	my ($xBegin) = $xpc->findnodes('mmd:begin[1]', $xRelation);
@@ -984,11 +1066,11 @@ sub _create_relation {
 	$relation->artist($self->_create_artist($xArtist)) if $xArtist;
 	$relation->recording($self->_create_recording($xRecording)) if $xRecording;
 	$relation->release($self->_create_release($xRelease)) if $xRelease;
-	$relation->release_group($self->_create_release_group($xRelease)) if $xReleaseGroup;
+	$relation->release_group($self->_create_release_group($xReleaseGroup)) if $xReleaseGroup;
 	$relation->work($self->_create_work($xWork)) if $xWork;
 	$relation->label($self->_create_label($xLabel)) if $xLabel;
 
-	$relation->attributes($self->_create_attributes(\@xAttributeList)) if @xAttributeList;
+	$relation->attributes($self->_create_attribute_list($xAttributeList)) if $xAttributeList;
 
 	$relation->target($xTarget->textContent) if $xTarget;
 	$relation->begin($xBegin->textContent) if $xBegin;
@@ -1197,7 +1279,6 @@ sub _create_tag {
    my ($xTag) = @_;
 
    require WebService::MusicBrainz2::Response::Tag;
-
    my $tag = WebService::MusicBrainz2::Response::Tag->new();
 
    $tag->id( $xTag->getAttribute('id') ) if $xTag->getAttribute('id');

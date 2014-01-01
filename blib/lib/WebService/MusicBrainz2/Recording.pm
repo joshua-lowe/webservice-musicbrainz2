@@ -55,7 +55,7 @@ sub _init {
 		qw/arid artist artistname creditname comment country date dur format 
 		isrc number position primarytype puid qdur recording recordingaccent 
 		reid release rgid rid secondarytype status tnum tracks tracksrelease 
-		tag type query/
+		tag type query basic/
 	);
 
 	$q->set_browse_params(

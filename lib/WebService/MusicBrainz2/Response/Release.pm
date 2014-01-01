@@ -37,6 +37,8 @@ All the methods listed below are accessor methods.  They can take a scalar argum
 
 =head2 text_rep
 
+=head2 cover_art_archive
+
 =head2 artist_credit
 
 =head2 release_group
@@ -48,6 +50,8 @@ All the methods listed below are accessor methods.  They can take a scalar argum
 =head2 relation_list
 
 =head2 relation_lists
+
+=head2 packaging
 
 =head2 tag_list
 
@@ -63,6 +67,7 @@ All the methods listed below are accessor methods.  They can take a scalar argum
 
 __PACKAGE__->mk_accessors(
 	qw/id title status quality disambiguation date country barcode asin
+	packaging cover_art_archive
 	text_rep artist_credit release_group label_info_list medium_list
 	relation_list relation_lists
 	tag_list user_tag_list rating user_rating score/

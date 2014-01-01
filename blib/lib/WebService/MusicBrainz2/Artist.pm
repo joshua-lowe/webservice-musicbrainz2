@@ -12,16 +12,11 @@ WebService::MusicBrainz2::Artist
 =head1 SYNOPSIS
 
 	use WebService::MusicBrainz2::Artist;
-
 	my $ws = WebService::MusicBrainz2::Artist->new;
-
-	my $response = $ws->search({ NAME => 'white lion' });
-
+	my $response = $ws->search({ ARTIST => 'DJ Krush' });
 	my $artist = $response->artist; # get first in list
-
-	print $artist->name, " ", $artist->life_span_begin, "-", $artist->life_span_end, "\n";
-
-	# OUTPUT: White Lion 1983-1991
+	print $artist->name . " a  " . $artist->gender .  " born " . $artist->life_span->begin . "\n";
+	# OUTPUT: DJ Krush a Male born 1962-07-29
 
 =head1 DESCRIPTION
 
@@ -31,9 +26,43 @@ This module is used to query an artist from the MusicBrainz version 2 web servic
 
 =head2 new
 
-This method is the constructor and it will make a call for initialization.  This method will take an optional HOST parameter to specify a mirrored server.  The default is "musicbrainz.org".  
+This method is the constructor and it will make a call for initialization.  This
+method takes any of four (4) optional parameters to specify enable various connections settings.
 
-my $ws = WebService::MusicBrainz2::Artist->new({HOST => 'de.musicbrainz.org', USER => 'username', PASS => 'secrect');
+=over 4
+
+=item HOST 
+
+=back
+
+The specific mirror server to connect to.  Defaults to "musicbrainz.org"
+
+=over 4
+
+=item USER
+
+=back
+
+The username used for athentication against the server.  This allows user-tags and user-rating to be retrived from the web service.  
+Requires the PASS paramiter as well.  Defaults to undef (no authentication).
+
+=over 4
+
+=item PASS
+
+=back
+
+The password used for athentication against the server.
+
+=over 4
+
+=item RELM
+
+=back
+
+The http authentication relm used for athentication against the server.  Only required if the mirror uses a different relm in its HTTP AUTH setup.  Defaults to HOST.
+
+my $ws = WebService::MusicBrainz2::Artist->new({HOST => 'de.musicbrainz.org', USER => 'username', PASS => 'secret');
 
 =cut
 
@@ -55,11 +84,11 @@ sub _init {
 
 	$q->set_search_params(
 		qw/arid artist artistaccent alias begin comment country end ended
-		gender ipi sortname tag type query/
+		gender ipi sortname tag type query basic/
 	);
 
 	$q->set_browse_params(
-		qw/recording release-group release work/
+		qw/aliases tags recording release-group release work/
 	);
 
 	$q->set_inc_params(
@@ -222,6 +251,7 @@ sub browse {
 =over 4
 
 =item Joshua Lowe <joshua.lowe.dev@gmail.com>
+
 =item Bob Faist <bob.faist@gmail.com>
 
 =back

@@ -131,7 +131,7 @@ it under the same terms as Perl itself.
 
 =head1 SEE ALSO
 
-http://musicbrainz.org/doc/XML_Web_Service/Version_2\n
+http://musicbrainz.org/doc/XML_Web_Service/Version_2
 http://wiki.musicbrainz.org/Database
 
 =cut

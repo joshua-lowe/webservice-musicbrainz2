@@ -1,7 +1,7 @@
 # This Makefile is for the WebService::MusicBrainz2 extension to perl.
 #
 # It was generated automatically by MakeMaker version
-# 6.62 (Revision: 66200) from the contents of
+# 6.64 (Revision: 66400) from the contents of
 # Makefile.PL. Don't edit this file, edit Makefile.PL instead.
 #
 #       ANY CHANGES MADE HERE WILL BE LOST!
@@ -18,6 +18,7 @@
 #     NAME => q[WebService::MusicBrainz2]
 #     PL_FILES => {  }
 #     PREREQ_PM => { Test::More=>q[0.88], LWP::UserAgent=>q[2.0], URI=>q[1.35], Class::Accessor=>q[0.30], XML::LibXML=>q[1.63] }
+#     TEST_REQUIRES => {  }
 #     VERSION_FROM => q[lib/WebService/MusicBrainz2.pm]
 
 # --- MakeMaker post_initialize section:
@@ -25,7 +26,7 @@
 
 # --- MakeMaker const_config section:
 
-# These definitions are from config.sh (via /usr/lib64/perl5/5.16.1/x86_64-linux-thread-multi/Config.pm).
+# These definitions are from config.sh (via /usr/lib64/perl5/5.16.3/x86_64-linux-thread-multi/Config.pm).
 # They may have been overridden via Makefile.PL or on the command line.
 AR = ar
 CC = x86_64-pc-linux-gnu-gcc
@@ -42,13 +43,13 @@ LIBC = /lib/libc-2.15.so
 LIB_EXT = .a
 OBJ_EXT = .o
 OSNAME = linux
-OSVERS = 3.3.1-gentoo
+OSVERS = 3.8.0-gentoo
 RANLIB = :
-SITELIBEXP = /usr/local/lib64/perl5/5.16.1
-SITEARCHEXP = /usr/local/lib64/perl5/5.16.1/x86_64-linux-thread-multi
+SITELIBEXP = /usr/local/lib64/perl5/5.16.3
+SITEARCHEXP = /usr/local/lib64/perl5/5.16.3/x86_64-linux-thread-multi
 SO = so
-VENDORARCHEXP = /usr/lib64/perl5/vendor_perl/5.16.1/x86_64-linux-thread-multi
-VENDORLIBEXP = /usr/lib64/perl5/vendor_perl/5.16.1
+VENDORARCHEXP = /usr/lib64/perl5/vendor_perl/5.16.3/x86_64-linux-thread-multi
+VENDORLIBEXP = /usr/lib64/perl5/vendor_perl/5.16.3
 
 
 # --- MakeMaker constants section:
@@ -78,17 +79,17 @@ PREFIX = $(SITEPREFIX)
 PERLPREFIX = /usr
 SITEPREFIX = /usr/local
 VENDORPREFIX = /usr
-INSTALLPRIVLIB = /usr/lib64/perl5/5.16.1
+INSTALLPRIVLIB = /usr/lib64/perl5/5.16.3
 DESTINSTALLPRIVLIB = $(DESTDIR)$(INSTALLPRIVLIB)
-INSTALLSITELIB = /usr/local/lib64/perl5/5.16.1
+INSTALLSITELIB = /usr/local/lib64/perl5/5.16.3
 DESTINSTALLSITELIB = $(DESTDIR)$(INSTALLSITELIB)
-INSTALLVENDORLIB = /usr/lib64/perl5/vendor_perl/5.16.1
+INSTALLVENDORLIB = /usr/lib64/perl5/vendor_perl/5.16.3
 DESTINSTALLVENDORLIB = $(DESTDIR)$(INSTALLVENDORLIB)
-INSTALLARCHLIB = /usr/lib64/perl5/5.16.1/x86_64-linux-thread-multi
+INSTALLARCHLIB = /usr/lib64/perl5/5.16.3/x86_64-linux-thread-multi
 DESTINSTALLARCHLIB = $(DESTDIR)$(INSTALLARCHLIB)
-INSTALLSITEARCH = /usr/local/lib64/perl5/5.16.1/x86_64-linux-thread-multi
+INSTALLSITEARCH = /usr/local/lib64/perl5/5.16.3/x86_64-linux-thread-multi
 DESTINSTALLSITEARCH = $(DESTDIR)$(INSTALLSITEARCH)
-INSTALLVENDORARCH = /usr/lib64/perl5/vendor_perl/5.16.1/x86_64-linux-thread-multi
+INSTALLVENDORARCH = /usr/lib64/perl5/vendor_perl/5.16.3/x86_64-linux-thread-multi
 DESTINSTALLVENDORARCH = $(DESTDIR)$(INSTALLVENDORARCH)
 INSTALLBIN = /usr/bin
 DESTINSTALLBIN = $(DESTDIR)$(INSTALLBIN)
@@ -114,16 +115,16 @@ INSTALLSITEMAN3DIR = /usr/local/man/man3
 DESTINSTALLSITEMAN3DIR = $(DESTDIR)$(INSTALLSITEMAN3DIR)
 INSTALLVENDORMAN3DIR = /usr/share/man/man3
 DESTINSTALLVENDORMAN3DIR = $(DESTDIR)$(INSTALLVENDORMAN3DIR)
-PERL_LIB = /usr/lib64/perl5/5.16.1
-PERL_ARCHLIB = /usr/lib64/perl5/5.16.1/x86_64-linux-thread-multi
+PERL_LIB = /usr/lib64/perl5/5.16.3
+PERL_ARCHLIB = /usr/lib64/perl5/5.16.3/x86_64-linux-thread-multi
 LIBPERL_A = libperl.a
 FIRST_MAKEFILE = Makefile
 MAKEFILE_OLD = Makefile.old
 MAKE_APERL_FILE = Makefile.aperl
 PERLMAINCC = $(CC)
-PERL_INC = /usr/lib64/perl5/5.16.1/x86_64-linux-thread-multi/CORE
-PERL = /usr/bin/perl5.16.1
-FULLPERL = /usr/bin/perl5.16.1
+PERL_INC = /usr/lib64/perl5/5.16.3/x86_64-linux-thread-multi/CORE
+PERL = /usr/bin/perl5.16.3
+FULLPERL = /usr/bin/perl5.16.3
 ABSPERL = $(PERL)
 PERLRUN = $(PERL)
 FULLPERLRUN = $(FULLPERL)
@@ -136,9 +137,9 @@ PERM_DIR = 755
 PERM_RW = 644
 PERM_RWX = 755
 
-MAKEMAKER   = /usr/lib64/perl5/vendor_perl/5.16.1/ExtUtils/MakeMaker.pm
-MM_VERSION  = 6.62
-MM_REVISION = 66200
+MAKEMAKER   = /usr/lib64/perl5/vendor_perl/5.16.2/ExtUtils/MakeMaker.pm
+MM_VERSION  = 6.64
+MM_REVISION = 66400
 
 # FULLEXT = Pathname for extension directory (eg Foo/Bar/Oracle).
 # BASEEXT = Basename part of FULLEXT. May be just equal FULLEXT. (eg Oracle)
@@ -174,6 +175,9 @@ MAN3PODS = lib/WebService/MusicBrainz2.pm \
 	lib/WebService/MusicBrainz2/Response/Artist.pm \
 	lib/WebService/MusicBrainz2/Response/ArtistCredit.pm \
 	lib/WebService/MusicBrainz2/Response/ArtistList.pm \
+	lib/WebService/MusicBrainz2/Response/Attribute.pm \
+	lib/WebService/MusicBrainz2/Response/AttributeList.pm \
+	lib/WebService/MusicBrainz2/Response/CoverArtArchive.pm \
 	lib/WebService/MusicBrainz2/Response/Disc.pm \
 	lib/WebService/MusicBrainz2/Response/DiscList.pm \
 	lib/WebService/MusicBrainz2/Response/ISRC.pm \
@@ -188,6 +192,7 @@ MAN3PODS = lib/WebService/MusicBrainz2.pm \
 	lib/WebService/MusicBrainz2/Response/Medium.pm \
 	lib/WebService/MusicBrainz2/Response/MediumList.pm \
 	lib/WebService/MusicBrainz2/Response/Metadata.pm \
+	lib/WebService/MusicBrainz2/Response/NameCredit.pm \
 	lib/WebService/MusicBrainz2/Response/Puid.pm \
 	lib/WebService/MusicBrainz2/Response/PuidList.pm \
 	lib/WebService/MusicBrainz2/Response/Rating.pm \
@@ -246,6 +251,9 @@ TO_INST_PM = lib/WebService/MusicBrainz2.pm \
 	lib/WebService/MusicBrainz2/Response/Artist.pm \
 	lib/WebService/MusicBrainz2/Response/ArtistCredit.pm \
 	lib/WebService/MusicBrainz2/Response/ArtistList.pm \
+	lib/WebService/MusicBrainz2/Response/Attribute.pm \
+	lib/WebService/MusicBrainz2/Response/AttributeList.pm \
+	lib/WebService/MusicBrainz2/Response/CoverArtArchive.pm \
 	lib/WebService/MusicBrainz2/Response/Disc.pm \
 	lib/WebService/MusicBrainz2/Response/DiscList.pm \
 	lib/WebService/MusicBrainz2/Response/ISRC.pm \
@@ -260,6 +268,7 @@ TO_INST_PM = lib/WebService/MusicBrainz2.pm \
 	lib/WebService/MusicBrainz2/Response/Medium.pm \
 	lib/WebService/MusicBrainz2/Response/MediumList.pm \
 	lib/WebService/MusicBrainz2/Response/Metadata.pm \
+	lib/WebService/MusicBrainz2/Response/NameCredit.pm \
 	lib/WebService/MusicBrainz2/Response/Puid.pm \
 	lib/WebService/MusicBrainz2/Response/PuidList.pm \
 	lib/WebService/MusicBrainz2/Response/Rating.pm \
@@ -295,6 +304,8 @@ PM_TO_BLIB = lib/WebService/MusicBrainz2/Response/Rating.pm \
 	blib/lib/WebService/MusicBrainz2/Response/UserTag.pm \
 	lib/WebService/MusicBrainz2/Response/Work.pm \
 	blib/lib/WebService/MusicBrainz2/Response/Work.pm \
+	lib/WebService/MusicBrainz2/Response/AttributeList.pm \
+	blib/lib/WebService/MusicBrainz2/Response/AttributeList.pm \
 	lib/WebService/MusicBrainz2/Response/TrackList.pm \
 	blib/lib/WebService/MusicBrainz2/Response/TrackList.pm \
 	lib/WebService/MusicBrainz2/Response/LabelInfoList.pm \
@@ -331,12 +342,12 @@ PM_TO_BLIB = lib/WebService/MusicBrainz2/Response/Rating.pm \
 	blib/lib/WebService/MusicBrainz2/Response/TagList.pm \
 	lib/WebService/MusicBrainz2/Response/ISRCList.pm \
 	blib/lib/WebService/MusicBrainz2/Response/ISRCList.pm \
+	lib/WebService/MusicBrainz2/Response/ReleaseEvent.pm \
+	blib/lib/WebService/MusicBrainz2/Response/ReleaseEvent.pm \
 	lib/WebService/MusicBrainz2/ReleaseGroup.pm \
 	blib/lib/WebService/MusicBrainz2/ReleaseGroup.pm \
 	lib/WebService/MusicBrainz2/Response/RecordingList.pm \
 	blib/lib/WebService/MusicBrainz2/Response/RecordingList.pm \
-	lib/WebService/MusicBrainz2/Response/ReleaseEvent.pm \
-	blib/lib/WebService/MusicBrainz2/Response/ReleaseEvent.pm \
 	lib/WebService/MusicBrainz2.pm \
 	blib/lib/WebService/MusicBrainz2.pm \
 	lib/WebService/MusicBrainz2/Response/WorkList.pm \
@@ -351,10 +362,14 @@ PM_TO_BLIB = lib/WebService/MusicBrainz2/Response/Rating.pm \
 	blib/lib/WebService/MusicBrainz2/Release.pm \
 	lib/WebService/MusicBrainz2/Response/LifeSpan.pm \
 	blib/lib/WebService/MusicBrainz2/Response/LifeSpan.pm \
+	lib/WebService/MusicBrainz2/Response/Attribute.pm \
+	blib/lib/WebService/MusicBrainz2/Response/Attribute.pm \
 	lib/WebService/MusicBrainz2/Response/AliasList.pm \
 	blib/lib/WebService/MusicBrainz2/Response/AliasList.pm \
 	lib/WebService/MusicBrainz2/Response/ArtistList.pm \
 	blib/lib/WebService/MusicBrainz2/Response/ArtistList.pm \
+	lib/WebService/MusicBrainz2/Response/CoverArtArchive.pm \
+	blib/lib/WebService/MusicBrainz2/Response/CoverArtArchive.pm \
 	lib/WebService/MusicBrainz2/Response/Track.pm \
 	blib/lib/WebService/MusicBrainz2/Response/Track.pm \
 	lib/WebService/MusicBrainz2/Response/ReleaseList.pm \
@@ -363,10 +378,10 @@ PM_TO_BLIB = lib/WebService/MusicBrainz2/Response/Rating.pm \
 	blib/lib/WebService/MusicBrainz2/Response/LabelInfo.pm \
 	lib/WebService/MusicBrainz2/Response/UserTagList.pm \
 	blib/lib/WebService/MusicBrainz2/Response/UserTagList.pm \
-	lib/WebService/MusicBrainz2/Response/Tag.pm \
-	blib/lib/WebService/MusicBrainz2/Response/Tag.pm \
 	lib/WebService/MusicBrainz2/Response/ReleaseEventList.pm \
 	blib/lib/WebService/MusicBrainz2/Response/ReleaseEventList.pm \
+	lib/WebService/MusicBrainz2/Response/Tag.pm \
+	blib/lib/WebService/MusicBrainz2/Response/Tag.pm \
 	lib/WebService/MusicBrainz2/Response/ReleaseGroup.pm \
 	blib/lib/WebService/MusicBrainz2/Response/ReleaseGroup.pm \
 	lib/WebService/MusicBrainz2/Response/IpiList.pm \
@@ -375,6 +390,8 @@ PM_TO_BLIB = lib/WebService/MusicBrainz2/Response/Rating.pm \
 	blib/lib/WebService/MusicBrainz2/Work.pm \
 	lib/WebService/MusicBrainz2/Response/Medium.pm \
 	blib/lib/WebService/MusicBrainz2/Response/Medium.pm \
+	lib/WebService/MusicBrainz2/Response/NameCredit.pm \
+	blib/lib/WebService/MusicBrainz2/Response/NameCredit.pm \
 	lib/WebService/MusicBrainz2/Response/TextRep.pm \
 	blib/lib/WebService/MusicBrainz2/Response/TextRep.pm \
 	lib/WebService/MusicBrainz2/Response/Artist.pm \
@@ -390,13 +407,13 @@ PM_TO_BLIB = lib/WebService/MusicBrainz2/Response/Rating.pm \
 
 
 # --- MakeMaker platform_constants section:
-MM_Unix_VERSION = 6.62
+MM_Unix_VERSION = 6.64
 PERL_MALLOC_DEF = -DPERL_EXTMALLOC_DEF -Dmalloc=Perl_malloc -Dfree=Perl_mfree -Drealloc=Perl_realloc -Dcalloc=Perl_calloc
 
 
 # --- MakeMaker tool_autosplit section:
 # Usage: $(AUTOSPLITFILE) FileToSplit AutoDirToSplitInto
-AUTOSPLITFILE = $(ABSPERLRUN)  -e 'use AutoSplit;  autosplit($$ARGV[0], $$ARGV[1], 0, 1, 1)' --
+AUTOSPLITFILE = $(ABSPERLRUN)  -e 'use AutoSplit;  autosplit($$$$ARGV[0], $$$$ARGV[1], 0, 1, 1)' --
 
 
 
@@ -613,6 +630,7 @@ manifypods : pure_all  \
 	lib/WebService/MusicBrainz2/Response/Label.pm \
 	lib/WebService/MusicBrainz2/Response/UserTag.pm \
 	lib/WebService/MusicBrainz2/Response/Work.pm \
+	lib/WebService/MusicBrainz2/Response/AttributeList.pm \
 	lib/WebService/MusicBrainz2/Response/TrackList.pm \
 	lib/WebService/MusicBrainz2/Response/LabelInfoList.pm \
 	lib/WebService/MusicBrainz2/Response/LabelList.pm \
@@ -631,9 +649,9 @@ manifypods : pure_all  \
 	lib/WebService/MusicBrainz2/Response/Ipi.pm \
 	lib/WebService/MusicBrainz2/Response/TagList.pm \
 	lib/WebService/MusicBrainz2/Response/ISRCList.pm \
+	lib/WebService/MusicBrainz2/Response/ReleaseEvent.pm \
 	lib/WebService/MusicBrainz2/ReleaseGroup.pm \
 	lib/WebService/MusicBrainz2/Response/RecordingList.pm \
-	lib/WebService/MusicBrainz2/Response/ReleaseEvent.pm \
 	lib/WebService/MusicBrainz2.pm \
 	lib/WebService/MusicBrainz2/Response/WorkList.pm \
 	lib/WebService/MusicBrainz2/Response/ISRC.pm \
@@ -641,18 +659,21 @@ manifypods : pure_all  \
 	lib/WebService/MusicBrainz2/Response/Metadata.pm \
 	lib/WebService/MusicBrainz2/Release.pm \
 	lib/WebService/MusicBrainz2/Response/LifeSpan.pm \
+	lib/WebService/MusicBrainz2/Response/Attribute.pm \
 	lib/WebService/MusicBrainz2/Response/AliasList.pm \
 	lib/WebService/MusicBrainz2/Response/ArtistList.pm \
+	lib/WebService/MusicBrainz2/Response/CoverArtArchive.pm \
 	lib/WebService/MusicBrainz2/Response/Track.pm \
 	lib/WebService/MusicBrainz2/Response/ReleaseList.pm \
 	lib/WebService/MusicBrainz2/Response/LabelInfo.pm \
 	lib/WebService/MusicBrainz2/Response/UserTagList.pm \
-	lib/WebService/MusicBrainz2/Response/Tag.pm \
 	lib/WebService/MusicBrainz2/Response/ReleaseEventList.pm \
+	lib/WebService/MusicBrainz2/Response/Tag.pm \
 	lib/WebService/MusicBrainz2/Response/ReleaseGroup.pm \
 	lib/WebService/MusicBrainz2/Response/IpiList.pm \
 	lib/WebService/MusicBrainz2/Work.pm \
 	lib/WebService/MusicBrainz2/Response/Medium.pm \
+	lib/WebService/MusicBrainz2/Response/NameCredit.pm \
 	lib/WebService/MusicBrainz2/Response/TextRep.pm \
 	lib/WebService/MusicBrainz2/Response/Artist.pm \
 	lib/WebService/MusicBrainz2/Response/ArtistCredit.pm \
@@ -665,6 +686,7 @@ manifypods : pure_all  \
 	  lib/WebService/MusicBrainz2/Response/Label.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::Label.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/UserTag.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::UserTag.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/Work.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::Work.$(MAN3EXT) \
+	  lib/WebService/MusicBrainz2/Response/AttributeList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::AttributeList.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/TrackList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::TrackList.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/LabelInfoList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::LabelInfoList.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/LabelList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::LabelList.$(MAN3EXT) \
@@ -681,12 +703,12 @@ manifypods : pure_all  \
 	  lib/WebService/MusicBrainz2/Response/Alias.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::Alias.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/DiscList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::DiscList.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/Ipi.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::Ipi.$(MAN3EXT) \
-	  lib/WebService/MusicBrainz2/Response/TagList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::TagList.$(MAN3EXT) \
-	  lib/WebService/MusicBrainz2/Response/ISRCList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::ISRCList.$(MAN3EXT) 
+	  lib/WebService/MusicBrainz2/Response/TagList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::TagList.$(MAN3EXT) 
 	$(NOECHO) $(POD2MAN) --section=3 --perm_rw=$(PERM_RW) \
+	  lib/WebService/MusicBrainz2/Response/ISRCList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::ISRCList.$(MAN3EXT) \
+	  lib/WebService/MusicBrainz2/Response/ReleaseEvent.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::ReleaseEvent.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/ReleaseGroup.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::ReleaseGroup.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/RecordingList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::RecordingList.$(MAN3EXT) \
-	  lib/WebService/MusicBrainz2/Response/ReleaseEvent.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::ReleaseEvent.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2.pm $(INST_MAN3DIR)/WebService::MusicBrainz2.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/WorkList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::WorkList.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/ISRC.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::ISRC.$(MAN3EXT) \
@@ -694,20 +716,23 @@ manifypods : pure_all  \
 	  lib/WebService/MusicBrainz2/Response/Metadata.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::Metadata.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Release.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Release.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/LifeSpan.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::LifeSpan.$(MAN3EXT) \
+	  lib/WebService/MusicBrainz2/Response/Attribute.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::Attribute.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/AliasList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::AliasList.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/ArtistList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::ArtistList.$(MAN3EXT) \
+	  lib/WebService/MusicBrainz2/Response/CoverArtArchive.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::CoverArtArchive.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/Track.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::Track.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/ReleaseList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::ReleaseList.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/LabelInfo.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::LabelInfo.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/UserTagList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::UserTagList.$(MAN3EXT) \
-	  lib/WebService/MusicBrainz2/Response/Tag.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::Tag.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/ReleaseEventList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::ReleaseEventList.$(MAN3EXT) \
-	  lib/WebService/MusicBrainz2/Response/ReleaseGroup.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::ReleaseGroup.$(MAN3EXT) \
+	  lib/WebService/MusicBrainz2/Response/Tag.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::Tag.$(MAN3EXT) \
+	  lib/WebService/MusicBrainz2/Response/ReleaseGroup.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::ReleaseGroup.$(MAN3EXT) 
+	$(NOECHO) $(POD2MAN) --section=3 --perm_rw=$(PERM_RW) \
 	  lib/WebService/MusicBrainz2/Response/IpiList.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::IpiList.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Work.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Work.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/Medium.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::Medium.$(MAN3EXT) \
-	  lib/WebService/MusicBrainz2/Response/TextRep.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::TextRep.$(MAN3EXT) 
-	$(NOECHO) $(POD2MAN) --section=3 --perm_rw=$(PERM_RW) \
+	  lib/WebService/MusicBrainz2/Response/NameCredit.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::NameCredit.$(MAN3EXT) \
+	  lib/WebService/MusicBrainz2/Response/TextRep.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::TextRep.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/Artist.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::Artist.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Response/ArtistCredit.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Response::ArtistCredit.$(MAN3EXT) \
 	  lib/WebService/MusicBrainz2/Label.pm $(INST_MAN3DIR)/WebService::MusicBrainz2::Label.$(MAN3EXT) \
@@ -786,7 +811,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) 'configure_requires:' >> META_new.yml
 	$(NOECHO) $(ECHO) '  ExtUtils::MakeMaker: 0' >> META_new.yml
 	$(NOECHO) $(ECHO) 'dynamic_config: 1' >> META_new.yml
-	$(NOECHO) $(ECHO) 'generated_by: '\''ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.112621'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) 'generated_by: '\''ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.120921'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'license: unknown' >> META_new.yml
 	$(NOECHO) $(ECHO) 'meta-spec:' >> META_new.yml
 	$(NOECHO) $(ECHO) '  url: http://module-build.sourceforge.net/META-spec-v1.4.html' >> META_new.yml
@@ -811,7 +836,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '      "unknown"' >> META_new.json
 	$(NOECHO) $(ECHO) '   ],' >> META_new.json
 	$(NOECHO) $(ECHO) '   "dynamic_config" : 1,' >> META_new.json
-	$(NOECHO) $(ECHO) '   "generated_by" : "ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.112621",' >> META_new.json
+	$(NOECHO) $(ECHO) '   "generated_by" : "ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.120921",' >> META_new.json
 	$(NOECHO) $(ECHO) '   "license" : [' >> META_new.json
 	$(NOECHO) $(ECHO) '      "unknown"' >> META_new.json
 	$(NOECHO) $(ECHO) '   ],' >> META_new.json
@@ -829,12 +854,12 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '   "prereqs" : {' >> META_new.json
 	$(NOECHO) $(ECHO) '      "build" : {' >> META_new.json
 	$(NOECHO) $(ECHO) '         "requires" : {' >> META_new.json
-	$(NOECHO) $(ECHO) '            "ExtUtils::MakeMaker" : 0' >> META_new.json
+	$(NOECHO) $(ECHO) '            "ExtUtils::MakeMaker" : "0"' >> META_new.json
 	$(NOECHO) $(ECHO) '         }' >> META_new.json
 	$(NOECHO) $(ECHO) '      },' >> META_new.json
 	$(NOECHO) $(ECHO) '      "configure" : {' >> META_new.json
 	$(NOECHO) $(ECHO) '         "requires" : {' >> META_new.json
-	$(NOECHO) $(ECHO) '            "ExtUtils::MakeMaker" : 0' >> META_new.json
+	$(NOECHO) $(ECHO) '            "ExtUtils::MakeMaker" : "0"' >> META_new.json
 	$(NOECHO) $(ECHO) '         }' >> META_new.json
 	$(NOECHO) $(ECHO) '      },' >> META_new.json
 	$(NOECHO) $(ECHO) '      "runtime" : {' >> META_new.json
@@ -944,17 +969,17 @@ ci :
 distmeta : create_distdir metafile
 	$(NOECHO) cd $(DISTVNAME) && $(ABSPERLRUN) -MExtUtils::Manifest=maniadd -e 'exit unless -e q{META.yml};' \
 	  -e 'eval { maniadd({q{META.yml} => q{Module YAML meta-data (added by MakeMaker)}}) }' \
-	  -e '    or print "Could not add META.yml to MANIFEST: $${'\''@'\''}\n"' --
+	  -e '    or print "Could not add META.yml to MANIFEST: $$$${'\''@'\''}\n"' --
 	$(NOECHO) cd $(DISTVNAME) && $(ABSPERLRUN) -MExtUtils::Manifest=maniadd -e 'exit unless -f q{META.json};' \
 	  -e 'eval { maniadd({q{META.json} => q{Module JSON meta-data (added by MakeMaker)}}) }' \
-	  -e '    or print "Could not add META.json to MANIFEST: $${'\''@'\''}\n"' --
+	  -e '    or print "Could not add META.json to MANIFEST: $$$${'\''@'\''}\n"' --
 
 
 
 # --- MakeMaker distsignature section:
 distsignature : create_distdir
 	$(NOECHO) cd $(DISTVNAME) && $(ABSPERLRUN) -MExtUtils::Manifest=maniadd -e 'eval { maniadd({q{SIGNATURE} => q{Public-key signature (added by MakeMaker)}}) } ' \
-	  -e '    or print "Could not add SIGNATURE to MANIFEST: $${'\''@'\''}\n"' --
+	  -e '    or print "Could not add SIGNATURE to MANIFEST: $$$${'\''@'\''}\n"' --
 	$(NOECHO) cd $(DISTVNAME) && $(TOUCH) SIGNATURE
 	cd $(DISTVNAME) && cpansign -s
 
@@ -1077,7 +1102,7 @@ $(FIRST_MAKEFILE) : Makefile.PL $(CONFIGDEP)
 
 # --- MakeMaker makeaperl section ---
 MAP_TARGET    = perl
-FULLPERL      = /usr/bin/perl5.16.1
+FULLPERL      = /usr/bin/perl5.16.3
 
 $(MAP_TARGET) :: static $(MAKE_APERL_FILE)
 	$(MAKE) $(USEMAKEFILE) $(MAKE_APERL_FILE) $@
@@ -1122,7 +1147,7 @@ testdb_static :: testdb_dynamic
 # --- MakeMaker ppd section:
 # Creates a PPD (Perl Package Description) for a binary distribution.
 ppd :
-	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="0.23">' > $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="$(VERSION)">' > $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <ABSTRACT></ABSTRACT>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <AUTHOR></AUTHOR>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> $(DISTNAME).ppd
@@ -1146,6 +1171,7 @@ pm_to_blib : $(FIRST_MAKEFILE) $(TO_INST_PM)
 	  lib/WebService/MusicBrainz2/Response/Label.pm blib/lib/WebService/MusicBrainz2/Response/Label.pm \
 	  lib/WebService/MusicBrainz2/Response/UserTag.pm blib/lib/WebService/MusicBrainz2/Response/UserTag.pm \
 	  lib/WebService/MusicBrainz2/Response/Work.pm blib/lib/WebService/MusicBrainz2/Response/Work.pm \
+	  lib/WebService/MusicBrainz2/Response/AttributeList.pm blib/lib/WebService/MusicBrainz2/Response/AttributeList.pm \
 	  lib/WebService/MusicBrainz2/Response/TrackList.pm blib/lib/WebService/MusicBrainz2/Response/TrackList.pm \
 	  lib/WebService/MusicBrainz2/Response/LabelInfoList.pm blib/lib/WebService/MusicBrainz2/Response/LabelInfoList.pm \
 	  lib/WebService/MusicBrainz2/Response/LabelList.pm blib/lib/WebService/MusicBrainz2/Response/LabelList.pm \
@@ -1164,10 +1190,10 @@ pm_to_blib : $(FIRST_MAKEFILE) $(TO_INST_PM)
 	  lib/WebService/MusicBrainz2/Response/Ipi.pm blib/lib/WebService/MusicBrainz2/Response/Ipi.pm \
 	  lib/WebService/MusicBrainz2/Response/TagList.pm blib/lib/WebService/MusicBrainz2/Response/TagList.pm \
 	  lib/WebService/MusicBrainz2/Response/ISRCList.pm blib/lib/WebService/MusicBrainz2/Response/ISRCList.pm \
-	  lib/WebService/MusicBrainz2/ReleaseGroup.pm blib/lib/WebService/MusicBrainz2/ReleaseGroup.pm \
-	  lib/WebService/MusicBrainz2/Response/RecordingList.pm blib/lib/WebService/MusicBrainz2/Response/RecordingList.pm \
-	  lib/WebService/MusicBrainz2/Response/ReleaseEvent.pm blib/lib/WebService/MusicBrainz2/Response/ReleaseEvent.pm 
+	  lib/WebService/MusicBrainz2/Response/ReleaseEvent.pm blib/lib/WebService/MusicBrainz2/Response/ReleaseEvent.pm \
+	  lib/WebService/MusicBrainz2/ReleaseGroup.pm blib/lib/WebService/MusicBrainz2/ReleaseGroup.pm 
 	$(NOECHO) $(ABSPERLRUN) -MExtUtils::Install -e 'pm_to_blib({@ARGV}, '\''$(INST_LIB)/auto'\'', q[$(PM_FILTER)], '\''$(PERM_DIR)'\'')' -- \
+	  lib/WebService/MusicBrainz2/Response/RecordingList.pm blib/lib/WebService/MusicBrainz2/Response/RecordingList.pm \
 	  lib/WebService/MusicBrainz2.pm blib/lib/WebService/MusicBrainz2.pm \
 	  lib/WebService/MusicBrainz2/Response/WorkList.pm blib/lib/WebService/MusicBrainz2/Response/WorkList.pm \
 	  lib/WebService/MusicBrainz2/Response/ISRC.pm blib/lib/WebService/MusicBrainz2/Response/ISRC.pm \
@@ -1175,21 +1201,25 @@ pm_to_blib : $(FIRST_MAKEFILE) $(TO_INST_PM)
 	  lib/WebService/MusicBrainz2/Response/Metadata.pm blib/lib/WebService/MusicBrainz2/Response/Metadata.pm \
 	  lib/WebService/MusicBrainz2/Release.pm blib/lib/WebService/MusicBrainz2/Release.pm \
 	  lib/WebService/MusicBrainz2/Response/LifeSpan.pm blib/lib/WebService/MusicBrainz2/Response/LifeSpan.pm \
+	  lib/WebService/MusicBrainz2/Response/Attribute.pm blib/lib/WebService/MusicBrainz2/Response/Attribute.pm \
 	  lib/WebService/MusicBrainz2/Response/AliasList.pm blib/lib/WebService/MusicBrainz2/Response/AliasList.pm \
 	  lib/WebService/MusicBrainz2/Response/ArtistList.pm blib/lib/WebService/MusicBrainz2/Response/ArtistList.pm \
+	  lib/WebService/MusicBrainz2/Response/CoverArtArchive.pm blib/lib/WebService/MusicBrainz2/Response/CoverArtArchive.pm \
 	  lib/WebService/MusicBrainz2/Response/Track.pm blib/lib/WebService/MusicBrainz2/Response/Track.pm \
 	  lib/WebService/MusicBrainz2/Response/ReleaseList.pm blib/lib/WebService/MusicBrainz2/Response/ReleaseList.pm \
 	  lib/WebService/MusicBrainz2/Response/LabelInfo.pm blib/lib/WebService/MusicBrainz2/Response/LabelInfo.pm \
 	  lib/WebService/MusicBrainz2/Response/UserTagList.pm blib/lib/WebService/MusicBrainz2/Response/UserTagList.pm \
-	  lib/WebService/MusicBrainz2/Response/Tag.pm blib/lib/WebService/MusicBrainz2/Response/Tag.pm \
 	  lib/WebService/MusicBrainz2/Response/ReleaseEventList.pm blib/lib/WebService/MusicBrainz2/Response/ReleaseEventList.pm \
+	  lib/WebService/MusicBrainz2/Response/Tag.pm blib/lib/WebService/MusicBrainz2/Response/Tag.pm \
 	  lib/WebService/MusicBrainz2/Response/ReleaseGroup.pm blib/lib/WebService/MusicBrainz2/Response/ReleaseGroup.pm \
 	  lib/WebService/MusicBrainz2/Response/IpiList.pm blib/lib/WebService/MusicBrainz2/Response/IpiList.pm \
 	  lib/WebService/MusicBrainz2/Work.pm blib/lib/WebService/MusicBrainz2/Work.pm \
 	  lib/WebService/MusicBrainz2/Response/Medium.pm blib/lib/WebService/MusicBrainz2/Response/Medium.pm \
+	  lib/WebService/MusicBrainz2/Response/NameCredit.pm blib/lib/WebService/MusicBrainz2/Response/NameCredit.pm \
 	  lib/WebService/MusicBrainz2/Response/TextRep.pm blib/lib/WebService/MusicBrainz2/Response/TextRep.pm \
 	  lib/WebService/MusicBrainz2/Response/Artist.pm blib/lib/WebService/MusicBrainz2/Response/Artist.pm \
-	  lib/WebService/MusicBrainz2/Response/ArtistCredit.pm blib/lib/WebService/MusicBrainz2/Response/ArtistCredit.pm \
+	  lib/WebService/MusicBrainz2/Response/ArtistCredit.pm blib/lib/WebService/MusicBrainz2/Response/ArtistCredit.pm 
+	$(NOECHO) $(ABSPERLRUN) -MExtUtils::Install -e 'pm_to_blib({@ARGV}, '\''$(INST_LIB)/auto'\'', q[$(PM_FILTER)], '\''$(PERM_DIR)'\'')' -- \
 	  lib/WebService/MusicBrainz2/Label.pm blib/lib/WebService/MusicBrainz2/Label.pm \
 	  lib/WebService/MusicBrainz2/Response/Relation.pm blib/lib/WebService/MusicBrainz2/Response/Relation.pm \
 	  lib/WebService/MusicBrainz2/Response/RelationList.pm blib/lib/WebService/MusicBrainz2/Response/RelationList.pm 

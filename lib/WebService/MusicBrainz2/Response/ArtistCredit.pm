@@ -17,13 +17,11 @@ WebService::MusicBrainz2::Response::ArtistCredit
 
 All the methods listed below are accessor methods.  They can take a scalar argument to set the state of the object or without and argument, they will return that state if it is available.
 
-=head2 join_phrases
-
-=head2 credits
+=head2 name_credits
 
 =cut
 
-__PACKAGE__->mk_accessors(qw/join_phrases credits/);
+__PACKAGE__->mk_accessors(qw/name_credits/);
 
 =head1 AUTHOR
 
